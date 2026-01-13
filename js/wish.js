@@ -75,17 +75,25 @@ const wishText = document.getElementById('wishText');
 const blessings = gender==='male'?maleBlessings:femaleBlessings;
 wishText.innerText = blessings[Math.floor(Math.random()*blessings.length)];
 
-// Generate golden snowballs
-const container = document.querySelector('.ball-container');
-for(let i=0;i<30;i++){
-    const ball=document.createElement('div');
-    ball.classList.add('ball');
-    const size=10+Math.random()*20;
-    ball.style.width=size+'px';
-    ball.style.height=size+'px';
-    ball.style.left=Math.random()*100+'vw';
-    ball.style.animationDuration=(3+Math.random()*5)+'s';
-    ball.style.animationDelay=Math.random()*5+'s';
-    ball.style.transform=`rotate(${Math.random()*360}deg)`;
-    container.appendChild(ball);
+const snowfallBg = document.getElementById("snowfall-bg");
+
+function createSnowflake(){
+    const snow = document.createElement("div");
+    snow.classList.add("snowflake");
+
+    const size = Math.random() * 6 + 6; // 6px – 12px
+    snow.style.width = size + "px";
+    snow.style.height = size + "px";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+    snowfallBg.appendChild(snow);
+
+    // remove after fall
+    setTimeout(() => {
+        snow.remove();
+    }, 12000);
 }
+
+// Light snowfall (not heavy)
+setInterval(createSnowflake, 350);
