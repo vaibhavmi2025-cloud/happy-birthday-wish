@@ -1,0 +1,60 @@
+body{
+    margin:0;padding:0;font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(135deg,#000000,#0a0900);
+    overflow:hidden;text-align:center;color:gold;
+}
+#wishTitle{
+    font-size:6em;
+    font-weight:bold;
+    text-shadow:0 0 10px gold,0 0 20px orange;
+    animation: blinkText 1.5s infinite;
+    margin-top:50px;
+}
+@keyframes blinkText{
+    0%,50%,100%{opacity:1;}
+    25%,75%{opacity:0.8;}
+}
+#wishText{
+    font-size:1.2em;
+    margin-top:20px;
+    line-height:1.6em;
+    max-width:600px;
+    margin-left:auto;margin-right:auto;
+}
+
+/* Back button */
+.back-btn{
+    position:absolute;top:20px;right:20px;
+    padding:5px 15px;
+    border-radius:25px;
+    background: gold;
+    color:#000;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 0 15px gold;
+    transition:0.3s;
+}
+.back-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px gold,0 0 40px orange;
+}
+
+/* Golden snowballs */
+.ball{
+    position:absolute;
+    border-radius:50%;
+    background: radial-gradient(circle at 30% 30%,#ffd700,#b8860b);
+    box-shadow:0 0 8px gold,0 0 15px orange;
+    opacity:0;
+    animation: fall linear infinite, rotateBall linear infinite;
+}
+@keyframes fall{
+    0%{transform:translateY(-50px) scale(0);opacity:0;}
+    30%{opacity:1;}
+    100%{transform:translateY(110vh) scale(1);opacity:0;}
+}
+@keyframes rotateBall{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
