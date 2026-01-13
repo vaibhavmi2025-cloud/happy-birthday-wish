@@ -4,7 +4,7 @@ body{
     overflow:hidden;text-align:center;color:gold;
 }
 #wishTitle{
-    font-size:6em;
+    font-size:5em;
     font-weight:bold;
     text-shadow:0 0 10px gold,0 0 20px orange;
     animation: blinkText 1.5s infinite;
